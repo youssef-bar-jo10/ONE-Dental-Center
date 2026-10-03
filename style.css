@@ -3039,3 +3039,652 @@ body.dark-mode .placeholder-content{
 html[dir="rtl"] .footer-credit{
   direction:ltr;
 }
+
+/* =========================================================
+   ONE DENTAL CENTER
+   FINAL RESPONSIVE FIX
+   ========================================================= */
+
+/* ---------- GLOBAL SAFETY ---------- */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body {
+  position: relative;
+}
+
+*,
+*::before,
+*::after {
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  html {
+    scroll-padding-top: 88px;
+  }
+
+  .site-header {
+    position: fixed;
+    top: 8px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    max-width: none;
+    height: 64px;
+    padding: 0 8px;
+    transform: none;
+    z-index: 9000;
+  }
+
+  .brand {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    margin-left: -1px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .brand-logo-wrap {
+    width: 100%;
+    height: 100%;
+  }
+
+  .brand-logo {
+    width: 54px;
+    height: 54px;
+    max-width: none;
+    border-radius: 50%;
+    object-fit: contain;
+  }
+
+  .header-actions {
+    margin-left: auto;
+    margin-right: 0;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .language-toggle {
+    min-width: 38px;
+    padding: 0 4px;
+  }
+
+  .icon-button,
+  .menu-toggle {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+    min-height: 38px;
+    flex-shrink: 0;
+  }
+
+  .menu-toggle {
+    display: grid;
+  }
+
+  /* Mobile dropdown */
+  .main-nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 9px 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    background: var(--surface-solid);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+
+    transition:
+      opacity .22s ease,
+      visibility .22s ease,
+      transform .22s ease;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .main-nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 13px 4px;
+    font-size: 13px;
+  }
+
+  .nav-link + .nav-link {
+    border-top: 1px solid var(--line);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+
+  /* =======================================================
+     HERO
+     ======================================================= */
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
+
+  .hero-copy {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    max-width: 100%;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    height: 440px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .portrait-halo {
+    width: min(88%, 410px);
+    max-width: calc(100% - 20px);
+
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .portrait-frame {
+    width: min(100%, 480px);
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .doctor-portrait {
+    max-width: 100%;
+  }
+
+
+  /* =======================================================
+     FLOATING CARDS
+     ======================================================= */
+
+  .floating-card {
+    right: 6px;
+    left: auto;
+
+    width: min(170px, 43%);
+    min-width: 0;
+    max-width: 170px;
+
+    padding: 9px 10px;
+    gap: 8px;
+
+    overflow: hidden;
+  }
+
+  .card-orthodontics {
+    top: 55px;
+    right: 6px;
+  }
+
+  .card-personalized {
+    top: 165px;
+    right: 6px;
+  }
+
+  .floating-card strong,
+  .floating-card small {
+    overflow-wrap: anywhere;
+  }
+
+  .visual-caption {
+    max-width: calc(100% - 24px);
+    white-space: normal;
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     GRID SAFETY
+     ======================================================= */
+
+  .trust-strip,
+  .about-section,
+  .treatment-grid,
+  .gallery-grid,
+  .contact-section {
+    min-width: 0;
+  }
+
+  .trust-item,
+  .treatment-card,
+  .gallery-card,
+  .contact-form {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .treatment-card *,
+  .gallery-card *,
+  .contact-form * {
+    max-width: 100%;
+  }
+
+
+  /* =======================================================
+     CONTACT FORM
+     ======================================================= */
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+
+  /* =======================================================
+     FOOTER
+     ======================================================= */
+
+  .site-footer {
+    min-width: 0;
+  }
+
+  .footer-main,
+  .footer-socials,
+  .footer-links,
+  .footer-credit {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+
+
+  /* =======================================================
+     FLOATING BUTTONS
+     ======================================================= */
+
+  .whatsapp-float {
+    right: 17px;
+    left: auto;
+    bottom: 18px;
+  }
+
+  .back-to-top {
+    right: 25px;
+    left: auto;
+    bottom: 83px;
+  }
+
+
+  /* =======================================================
+     RTL
+     ======================================================= */
+
+  html[dir="rtl"] .header-actions {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  html[dir="rtl"] .floating-card {
+    right: auto;
+    left: 6px;
+  }
+
+  html[dir="rtl"] .card-orthodontics,
+  html[dir="rtl"] .card-personalized {
+    right: auto;
+    left: 6px;
+  }
+
+  html[dir="rtl"] .whatsapp-float {
+    right: auto;
+    left: 17px;
+  }
+
+  html[dir="rtl"] .back-to-top {
+    right: auto;
+    left: 25px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .section-shell {
+    width: calc(100% - 28px);
+    max-width: 100%;
+  }
+
+  .site-header {
+    left: 7px;
+    right: 7px;
+    width: auto;
+    height: 58px;
+    padding-inline: 7px;
+    border-radius: 17px;
+  }
+
+  .brand {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .header-actions {
+    gap: 4px;
+  }
+
+  .icon-button,
+  .menu-toggle {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    min-height: 36px;
+  }
+
+  .language-toggle {
+    min-width: 36px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding-top: 92px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-visual {
+    height: 390px;
+  }
+
+  .portrait-halo {
+    height: 345px;
+  }
+
+  .portrait-frame {
+    height: 380px;
+  }
+
+  .floating-card {
+    width: 145px;
+    max-width: 43%;
+    padding: 8px;
+  }
+
+  .floating-icon {
+    width: 29px;
+    height: 29px;
+    font-size: 12px;
+  }
+
+  .floating-card strong {
+    font-size: 9px;
+  }
+
+  .floating-card small {
+    font-size: 7.5px;
+  }
+
+  .card-orthodontics {
+    top: 43px;
+  }
+
+  .card-personalized {
+    top: 145px;
+  }
+
+  .treatment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .treatment-card {
+    min-height: 0;
+  }
+
+  .treatment-card p {
+    min-height: 0;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-large {
+    grid-column: auto;
+  }
+
+  .gallery-card {
+    min-height: 260px;
+  }
+
+  .contact-form {
+    padding: 18px 14px;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .section-shell {
+    width: calc(100% - 22px);
+  }
+
+  .site-header {
+    left: 5px;
+    right: 5px;
+    height: 56px;
+    padding-inline: 6px;
+  }
+
+  .brand {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+
+  .brand-logo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .icon-button,
+  .menu-toggle {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    min-height: 34px;
+  }
+
+  .language-toggle {
+    min-width: 34px;
+    font-size: 10px;
+  }
+
+  .header-actions {
+    gap: 3px;
+  }
+
+  .hero {
+    padding-top: 88px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-visual {
+    height: 355px;
+  }
+
+  .portrait-halo {
+    width: calc(100% - 24px);
+    height: 305px;
+  }
+
+  .portrait-frame {
+    height: 335px;
+  }
+
+  .floating-card {
+    width: 128px;
+    max-width: 42%;
+    padding: 7px;
+  }
+
+  .floating-card strong {
+    font-size: 8px;
+  }
+
+  .floating-card small {
+    font-size: 7px;
+  }
+
+  .card-orthodontics {
+    top: 30px;
+  }
+
+  .card-personalized {
+    top: 122px;
+  }
+
+  .visual-caption {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   SAFE AREA
+   ========================================================= */
+
+@supports (padding: max(0px)) {
+
+  .site-header {
+    top: max(6px, env(safe-area-inset-top));
+  }
+
+  .whatsapp-float {
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+
+  .back-to-top {
+    bottom: max(76px, calc(62px + env(safe-area-inset-bottom)));
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
